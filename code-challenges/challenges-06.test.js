@@ -134,12 +134,12 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
-  for (let i = 0; i < arr.length; i++){
-    let values = Object.values(arr[i]);
-    houses.push(values[3]);
-  }
+  arr.forEach((element) => {
+    houses.push(element.house);
+  })
   return houses;
 };
+
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -156,14 +156,14 @@ hasChildrenValues(characters, 'Sansa') will return false
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
   let hasChildren = false;
-  arr.forEach(element => {
-    let val = Object.values(element)
-    if(val[0] === character){
+  arr.forEach((element)=> {
+    if(element.children.length !== 0 && element.name === character) {
       hasChildren = true;
     }
-  });
-return hasChildren;
+  })
+  return hasChildren;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
