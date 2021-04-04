@@ -4,12 +4,6 @@ const Node = require('../linked-list').Node;
 const LinkedList = require('../linked-list').LinkedList;
 
 
-// test('init node class', () => {
-//     let value = 5;
-//     let node = new Node(value);
-//     expect(node.val).toEqual(5);
-//     expect(node.next).toEqual(null);
-// });
 
 test('init LinkedList class', () => {
     let linkedList = new LinkedList();
@@ -69,3 +63,84 @@ test('Should be able to return all values in LL as a string' , ()=>{
     expect(ll.toString()).toEqual("{200} -> {100} -> NULL");
 });
 
+//---------NEW TESTS--------//
+
+test("Should be able to add node to the end of the linked list", () => {
+    let ll = new LinkedList();
+  
+    ll.insert(100);
+    ll.insert(200);
+    ll.append(50);
+  
+    expect(ll.toString()).toEqual("{200} -> {100} -> {50} -> NULL");
+  })
+  
+  test("Should be able to add nodes to the end of the linked list", () => {
+    let ll = new LinkedList();
+  
+    ll.insert(100);
+    ll.insert(300);
+    ll.append(50);
+    ll.append(20);
+    ll.append(600);
+  
+    expect(ll.toString()).toEqual("{300} -> {100} -> {50} -> {20} -> {600} -> NULL");
+  })
+  
+  
+  test("Should be able to insert a node before a node located i the middle of a linked list", () => {
+    let ll = new LinkedList();
+  
+    ll.insert(10);
+    ll.insert(20);
+    ll.insert(30);
+    ll.insertBefore(20, 100);
+  
+    let finalLinkedList = ll.toString();
+    let array = finalLinkedList.split(" ");
+  
+    expect(array[2]).toEqual("{100}");
+  
+  })
+  
+  test("Should be able to insert a node before the first node of a linked list", () => {
+    let ll = new LinkedList();
+  
+    ll.append(10);
+    ll.append(20);
+    ll.insert(30);
+   
+  
+    let finalLinkedList = ll.toString();
+    let array = finalLinkedList.split(" ");
+  
+    expect(array[0]).toEqual("{30}");
+  
+  })
+  
+  test("Should be able to insert a node after a node located i the middle of a linked list", () => {
+    let ll = new LinkedList();
+  
+    ll.insert(10);
+    ll.insert(20);
+    ll.insert(30);
+    ll.insertAfter(20, 100);
+  
+    let finalLinkedList = ll.toString();
+    let array = finalLinkedList.split(" ");
+  
+    expect(array[4]).toEqual("{100}");
+  
+  })
+  
+  test("Should be able to insert a node after the last node of the linked list", () => {
+    let ll = new LinkedList();
+  
+    ll.insert(10);
+    ll.insert(20);
+    ll.insert(30);
+    ll.append(100);
+  
+    expect(ll.toString()).toEqual("{30} -> {20} -> {10} -> {100} -> NULL");
+  
+  })

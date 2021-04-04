@@ -17,7 +17,7 @@ class LinkedList {
         try {
             let newNode = this.head;
             this.head = new Node(val, newNode);
-            this.length ++;
+            this.length++;
 
         }
         catch (err) {
@@ -58,14 +58,60 @@ class LinkedList {
             console.log('Error in calling toString function', err);
         }
     }
+    append(val) {
+        var newNode = new Node(val);
+        if (!this.head) {
+            this.head = newNode;
+        } else {
+            let lastNode = this.head;
+            while (lastNode.next) {
+                lastNode = lastNode.next;
+            }
+            lastNode.next = newNode;
+        }
+    }
+
+    insertAfter(val, newVal) {
+        let node = new Node(newVal);
+        let current = this.head;
+        while (current) {
+            if (current.val === val) {
+                let temp = current.next;
+                current.next = node;
+                node.next = temp;
+                return;
+            }
+            current = current.next;
+        }
+        return "Exception";
+    }
+
+    insertBefore(val, newVal) {
+        let node = new Node(newVal);
+        let current = this.head;
+        while (current && current.next !== null) {
+            if (current.next.val === val) {
+                let temp = current.next;
+                current.next = node;
+                node.next = temp;
+                return;
+            }
+            current = current.next;
+        }
+        return "Exception";
+    }
 }
 
 const ll = new LinkedList();
 
 ll.insert(100);
-ll.insert(200);
+ll.insert(300);
 ll.includes(100);
 ll.toString();
+ll.append(900);
+ll.insertAfter(100, 500);
+ll.insertBefore(200, 400);
 
 
-module.exports = { Node:Node , LinkedList:LinkedList}
+
+module.exports = { Node: Node, LinkedList: LinkedList }
