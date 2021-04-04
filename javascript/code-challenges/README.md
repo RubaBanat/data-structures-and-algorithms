@@ -7,3 +7,4 @@ Code Challenge-1 | [Reverse-Array](https://github.com/RubaBanat/data-structures-
 Code Challenge-2 | [Shift-Array](https://github.com/RubaBanat/data-structures-and-algorithms/pull/18)
 Code Challenge-3 | [Array-Binary-Search](https://github.com/RubaBanat/data-structures-and-algorithms/pull/20)
 Code Challenge-4 | [Linked-List](https://github.com/RubaBanat/data-structures-and-algorithms/pull/21)
+Code Challenge-5 | [ll-insertions](https://github.com/RubaBanat/data-structures-and-algorithms/pull/22)
