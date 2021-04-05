@@ -60,12 +60,15 @@ class LinkedList {
     }
     append(val) {
         var newNode = new Node(val);
+        this.length++;
+
         if (!this.head) {
             this.head = newNode;
         } else {
             let lastNode = this.head;
             while (lastNode.next) {
                 lastNode = lastNode.next;
+                
             }
             lastNode.next = newNode;
         }
@@ -77,6 +80,7 @@ class LinkedList {
         while (current) {
             if (current.val === val) {
                 let temp = current.next;
+                this.length++;
                 current.next = node;
                 node.next = temp;
                 return;
@@ -92,6 +96,7 @@ class LinkedList {
         while (current && current.next !== null) {
             if (current.next.val === val) {
                 let temp = current.next;
+                this.length++;
                 current.next = node;
                 node.next = temp;
                 return;
@@ -100,18 +105,38 @@ class LinkedList {
         }
         return "Exception";
     }
+    
+     kthFromEnd(k) {
+        let current = this.head;
+        let position = this.length - 1 - k;
+        let i = 0;
+
+        while (current){
+            if (position === i){
+                console.log(current.val);
+                return current.val;
+            }
+            current = current.next;
+            i++;
+        }
+        
+        console.log("Exception"); 
+        return "Exception";
+    }
 }
+
 
 const ll = new LinkedList();
 
 ll.insert(100);
-ll.insert(300);
-ll.includes(100);
-ll.toString();
+ll.insert(200);
+// ll.includes(100);
 ll.append(900);
-ll.insertAfter(100, 500);
-ll.insertBefore(200, 400);
-
+// ll.insertAfter(100, 500);
+// ll.insertBefore(200, 400);
+ll.kthFromEnd(2);
+ll.toString();
+// console.log(ll.findFromEnd(0));
 
 
 module.exports = { Node: Node, LinkedList: LinkedList }
