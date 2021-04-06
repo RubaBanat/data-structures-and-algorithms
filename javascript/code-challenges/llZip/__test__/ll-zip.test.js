@@ -25,4 +25,21 @@ test("should return “Happy Path” - Expected outcome the linked list ", () =>
   })
   
 
-
+  test("It should return Exception when the length of list1 and list2 are not equal", () => {
+    const ll1 = new LinkedList();
+    const ll2 = new LinkedList();
+  
+    ll1.append(100);
+    ll1.append(200);
+    ll2.append(10);
+    ll2.append(20);
+    expect(zipLists(ll1, ll2).toString()).toEqual("Exception");
+  
+  })
+  
+  test("'Edge case', Empty linked lists", () => {
+    const ll1 = new LinkedList();
+    const ll2 = new LinkedList();
+  
+    expect(zipLists(ll1, ll2).toString()).toEqual("NULL");
+  })
