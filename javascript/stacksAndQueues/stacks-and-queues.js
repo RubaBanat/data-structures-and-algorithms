@@ -72,6 +72,7 @@ console.log(stack);
 class Queue {
     constructor() {
         this.front = null;
+        this.back = null;
         this.length = 0;
     }
 
@@ -79,13 +80,17 @@ class Queue {
         let node = new Node(val);
         if (!this.front) {
             this.front = node;
+            this.back = node;
             this.length++;
         } else {
-            let lastNode = this.front;
-            while (lastNode.next) {
-                lastNode = lastNode.next
-            }
-            lastNode.next = node;
+
+            this.back.next = node;
+            this.back = node;
+            // let lastNode = this.front;
+            // while (lastNode.next) {
+            //     lastNode = lastNode.next
+            // }
+            // lastNode.next = node;
             this.length++;
         }
     }
@@ -122,7 +127,7 @@ const queue = new Queue();
 
 queue.enqueue(10);
 queue.enqueue(20);
-queue.enqueue(30);
+// queue.enqueue(30);
 queue.dequeue();
 // queue.dequeue();
 queue.peek()
