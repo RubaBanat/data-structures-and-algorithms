@@ -56,17 +56,17 @@ class Stack {
 
 const stack = new Stack();
 
-stack.push(1);
-stack.push(2);
-stack.push(3);
-stack.push(4);
-stack.pop();
-stack.pop();
+// stack.push(1);
+// stack.push(2);
+// stack.push(3);
+// stack.push(4);
 // stack.pop();
+// stack.pop();
+// // stack.pop();
 
-stack.peek();
+// stack.peek();
 // stack.isEmpty()
-console.log(stack);
+// console.log(stack);
 
 
 class Queue {
@@ -127,13 +127,13 @@ const queue = new Queue();
 
 queue.enqueue(10);
 queue.enqueue(20);
-queue.enqueue(30);
-queue.dequeue();
+// queue.enqueue(30);
 // queue.dequeue();
-queue.peek()
-queue.isEmpty()
+// // queue.dequeue();
+// queue.peek()
+// queue.isEmpty()
 
-console.log(queue);
+// console.log(queue);
 
 
 module.exports = { Node: Node, Stack: Stack , Queue: Queue }
