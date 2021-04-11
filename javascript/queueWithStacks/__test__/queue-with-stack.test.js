@@ -6,7 +6,7 @@ test('Should return “Happy Path” - Expected outcome for enqueue', () => {
     queue.enqueue(1);
     queue.enqueue(2);
   
-    expect(queue.stack1.arr).toEqual([1,2])
+    expect(queue.stack1.top.val).toEqual(2)
 })
 test('Should return “Happy Path” - Expected outcome for dequeue', () => {
     let queue = new PseudoQueue()
@@ -14,7 +14,7 @@ test('Should return “Happy Path” - Expected outcome for dequeue', () => {
     queue.enqueue(1);
     queue.dequeue();
     
-    expect(queue.stack2.arr).toEqual([])
+    expect(queue.stack2.length).toEqual(0)
 })
 test('Should return “Happy Path” - Expected outcome for peek', () => {
     let queue = new PseudoQueue()
