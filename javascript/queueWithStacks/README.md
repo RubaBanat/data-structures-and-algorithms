@@ -18,7 +18,7 @@ these functions allow me to push and pop from two stacks using queue
 Big O:
 
 - space O(n)
-- time O(n)
+- time O(1)
 
 ---
 
