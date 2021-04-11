@@ -33,18 +33,17 @@ class PseudoQueue{
         return this.stack2[this.stack2.length-1]
     }
 
-
 }
 
 const queue = new PseudoQueue()
 
-// queue.enqueue(1);
-// queue.enqueue(2);
-// queue.enqueue(3);
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
 // queue.enqueue(4);
-// queue.enqueue(5);
-// queue.dequeue();
 queue.dequeue();
+queue.dequeue();
+queue.enqueue(5);
 queue.peek();
 
 console.log(queue);
