@@ -11,16 +11,16 @@ function multiBracketValidation(input) {
             stack.push(input[i]);
         }
         if (input[i] === ')' || input[i] === ']' || input[i] === '}') {
-            const leftBracket = stack.pop();
-            if (leftBracket === '(' && input[i] !== ')') {
+            const openBracket = stack.pop();
+            if (openBracket === '(' && input[i] == '(') {
                 console.log(false);
                 return false;
             }
-            if (leftBracket === '[' && input[i] !== ']') {
+            if (openBracket === '[' && input[i] == '[') {
                 console.log(false);
                 return false;
             }
-            if (leftBracket === '{' && input[i] !== '}') {
+            if (openBracket === '{' && input[i] == '{') {
                 console.log(false);
                 return false;
             }
@@ -30,7 +30,6 @@ function multiBracketValidation(input) {
         console.log(false);
         return false;
     }
-
     console.log(true);
     return true;
 };
@@ -39,7 +38,7 @@ function multiBracketValidation(input) {
 // multiBracketValidation('{(})')
 
 // multiBracketValidation('[{}]')
-// multiBracketValidation('()[[Extra Characters]')
+multiBracketValidation('()[[Extra Characters]]')
 // multiBracketValidation('()[]]')
 
 
