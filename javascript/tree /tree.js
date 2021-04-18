@@ -108,21 +108,35 @@ class BinarySearchTree {
         console.log(false);
         return false;
     }
-    findMaxValue(){
+    findMaxValue() {
+        if (!this.root ) {
+              console.log(null);
+                return null;
+        }
+        let curr = this.root;
 
+        while (curr.right !== null) {
+            curr = curr.right;
+        }
+        console.log('max', curr.val);
+        return curr.val;
     }
 }
+
 
 const bst = new BinarySearchTree();
 
 
-// bst.add(5);
-// bst.add(5);
-// bst.add(4);
 // bst.add(6);
-// bst.contains(6);
-// bst.contains(7);
-// bst.contains(4);
+// bst.add(5);
+// bst.add(8);
+// bst.add(4);
+// bst.add(7);
+// bst.add(5);
+// // bst.contains(6);
+// // bst.contains(7);
+// // bst.contains(4);
+bst.findMaxValue()
 
 
 console.log(bst);
@@ -130,5 +144,5 @@ console.log(bst);
 module.exports = {
     Node: Node,
     BinaryTree: BinaryTree,
-    BinarySearchTree: BinarySearchTree
+    BinarySearchTree: BinarySearchTree,
 }
