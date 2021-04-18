@@ -79,7 +79,7 @@ class BinarySearchTree {
             } else {
                 this.addNode(node.left, newNode);
             };
-        } else if(node.val < newNode.val) {
+        } else if (node.val < newNode.val) {
             if (!node.right) {
                 node.right = newNode;
             } else {
@@ -87,11 +87,24 @@ class BinarySearchTree {
             }
         }
     }
-    contains(val){
-        if(val === this.root.val || val === this.root.right.val || val === this.root.left.val ){
-            console.log(true);
-            return true;
-        } 
+    contains(val) {
+        if (this.root === null) {
+            console.log(null);
+            return null;
+        }
+        let curr = this.root;
+
+        while (curr) {
+            if (val === curr.val) {
+                console.log(true);
+                return true;
+            }
+            if (val < curr.val) {
+                curr = curr.left;
+            } else {
+                curr = curr.right;
+            }
+        }
         console.log(false);
         return false;
     }
