@@ -95,6 +95,9 @@ class BinarySearchTree {
         console.log(false);
         return false;
     }
+    findMaxValue(){
+
+    }
 }
 
 const bst = new BinarySearchTree();
