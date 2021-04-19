@@ -70,16 +70,30 @@ class BinaryTree {
                     maximum = treeArr[i];
                 }
             }
-            console.log('max',maximum);
+            console.log('max', maximum);
             return maximum;
         }
     }
+    BFT() {
+        let treeArr = [];
+        let queue = [];
+        let node = this.root;
+        console.log(node.val);
+        queue.push(node);
+        while (queue.length) {
+            node = queue.shift();
+            treeArr.push(node.val);
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
+        }
+        return treeArr
+    }
 }
-
 
 let bT = new BinaryTree;
 
-bT.findMaxValue()
+// bT.findMaxValue()
+// bT.BFT()
 
 console.log(bT);
 
