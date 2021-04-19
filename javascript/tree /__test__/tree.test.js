@@ -65,5 +65,18 @@ describe('Binary Tree', () => {
     it('postOrder', () => {
       expect(tree.postOrder()).toEqual(['d','e','b','f','h','g','c','a']);
     });
-});
+    it('if empty return null',()=>{
+      let newTree= new BinaryTree(null);
+      let findMax= newTree.findMaxValue();
 
+      expect(findMax).toBeNull;
+    });
+
+    it('find the max value',()=>{
+      let expected=0;
+      let findMax= tree.findMaxValue();
+
+      expect(findMax).toEqual(expected);
+    })
+  });
+   

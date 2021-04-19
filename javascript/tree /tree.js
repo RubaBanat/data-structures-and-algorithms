@@ -58,7 +58,31 @@ class BinaryTree {
         traverse(this.root)
         return treeArr;
     }
+    findMaxValue() {
+        if (this.root === null) {
+            console.log(null);
+            return null;
+        } else {
+            let maximum = 0;
+            let treeArr = this.inOrder();
+            for (let i = 0; i < treeArr.length; i++) {
+                if (maximum < treeArr[i]) {
+                    maximum = treeArr[i];
+                }
+            }
+            console.log('max',maximum);
+            return maximum;
+        }
+    }
 }
+
+
+let bT = new BinaryTree;
+
+bT.findMaxValue()
+
+console.log(bT);
+
 
 class BinarySearchTree {
     constructor(root = null) {
@@ -108,19 +132,19 @@ class BinarySearchTree {
         console.log(false);
         return false;
     }
-    findMaxValue() {
-        if (!this.root ) {
-              console.log(null);
-                return null;
-        }
-        let curr = this.root;
+    // findMaxValue() {
+    //     if (!this.root) {
+    //         console.log(null);
+    //         return null;
+    //     }
+    //     let curr = this.root;
 
-        while (curr.right !== null) {
-            curr = curr.right;
-        }
-        console.log('max', curr.val);
-        return curr.val;
-    }
+    //     while (curr.right !== null) {
+    //         curr = curr.right;
+    //     }
+    //     console.log('max', curr.val);
+    //     return curr.val;
+    // }
 }
 
 
@@ -136,10 +160,10 @@ const bst = new BinarySearchTree();
 // // bst.contains(6);
 // // bst.contains(7);
 // // bst.contains(4);
-bst.findMaxValue()
+// bst.findMaxValue()
 
 
-console.log(bst);
+// console.log(bst);
 
 module.exports = {
     Node: Node,
