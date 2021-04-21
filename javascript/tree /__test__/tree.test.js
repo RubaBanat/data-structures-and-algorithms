@@ -54,7 +54,7 @@ describe('Binary Tree', () => {
       three.right = seven;
       seven.left = eight;
       tree = new BinaryTree(one);
-      console.log('treeee',tree);
+      // console.log('treeee',tree);
     });
     it('preOrder', () => {
       expect(tree.preOrder()).toEqual(['a','b','d','e','c','f','g','h']);

@@ -95,7 +95,7 @@ let bT = new BinaryTree;
 // bT.findMaxValue()
 // bT.BFT()
 
-console.log(bT);
+// console.log(bT);
 
 
 class BinarySearchTree {
