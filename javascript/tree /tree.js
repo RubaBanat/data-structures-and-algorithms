@@ -74,6 +74,22 @@ class BinaryTree {
             return maximum;
         }
     }
+    sumOdd() {
+        if (this.root === null) {
+            return null;
+        } else {
+            let sum = 0;
+            let treeArr = this.inOrder();
+            for (let i = 0; i < treeArr.length; i++) {
+                if (!(treeArr[i] % 2 === 0)) {
+                    sum = sum + treeArr[i]
+                }
+
+            }
+            console.log('sum', sum);
+            return sum;
+        }
+    }
     BFT() {
         let treeArr = [];
         let queue = [];
