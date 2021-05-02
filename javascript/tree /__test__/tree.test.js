@@ -38,14 +38,14 @@ test('Can successfully add a left child and right child to a single root node' ,
 describe('Binary Tree', () => {
     let tree;
     beforeAll(() => {
-      const one = new Node('a');
-      const two = new Node('b');
-      const three = new Node('c');
-      const four = new Node('d');
-      const five = new Node('e');
-      const six = new Node('f');
-      const seven = new Node('g');
-      const eight = new Node('h');
+      const one = new Node(1);
+      const two = new Node(2);
+      const three = new Node(3);
+      const four = new Node(4);
+      const five = new Node(5);
+      const six = new Node(6);
+      const seven = new Node(7);
+      const eight = new Node(8);
       one.left = two;
       one.right = three;
       two.left = four;
@@ -57,13 +57,13 @@ describe('Binary Tree', () => {
       // console.log('treeee',tree);
     });
     it('preOrder', () => {
-      expect(tree.preOrder()).toEqual(['a','b','d','e','c','f','g','h']);
+      expect(tree.preOrder()).toEqual([1,2,4,5,3,6,7,8]);
     });
     it('inOrder', () => {
-      expect(tree.inOrder()).toEqual(['d','b','e','a','f','c','h','g']);
+      expect(tree.inOrder()).toEqual([4,2,5,1,6,3,8,7]);
     });
     it('postOrder', () => {
-      expect(tree.postOrder()).toEqual(['d','e','b','f','h','g','c','a']);
+      expect(tree.postOrder()).toEqual([4, 5, 2, 6,8, 7, 3, 1]);
     });
     it('if empty return null',()=>{
       let newTree= new BinaryTree(null);
@@ -73,13 +73,19 @@ describe('Binary Tree', () => {
     });
 
     it('find the max value',()=>{
-      let expected=0;
+      let expected=8;
       let findMax= tree.findMaxValue();
 
       expect(findMax).toEqual(expected);
     })
+    it('find the max value',()=>{
+      let expected=16;
+      let sumOdd= tree.sumOdd();
+
+      expect(sumOdd).toEqual(expected);
+    })
     it('“Happy Path” - Expected outcome',()=>{
-      let expected= ['a','b','c','d','e','f','g','h'];
+      let expected= [1,2,3,4,5,6,7,8];
       let findMax= tree.BFT();
 
       expect(findMax).toEqual(expected);
