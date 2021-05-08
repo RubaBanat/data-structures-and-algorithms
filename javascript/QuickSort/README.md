@@ -12,7 +12,7 @@ Write a 3 functions that take 3  arguments and return a array sorted using the q
 
 # Whiteboard 
 
-![sort](/assets/cc28.png)
+![sort](/assets/quickSort.png)
 
 ---
 
