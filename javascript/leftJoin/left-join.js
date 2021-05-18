@@ -9,7 +9,6 @@ function leftJoin(left, right) {
     
     let leftKey = Object.values(left.table)[i].head.value.key;
     let leftValue = Object.values(left.table)[i].head.value.value;
-
     for (let j = 0; j < Object.keys(right.table).length; j++) {
       let rightKey = Object.values(right.table)[j].head.value.key;
       let rightValue = Object.values(right.table)[j].head.value.value;
