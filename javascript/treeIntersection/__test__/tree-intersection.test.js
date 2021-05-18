@@ -17,8 +17,8 @@ describe('Tree Intersection Test', () => {
         tree1.root.left.right.right = new trees.Node(175);
         tree1.root.right = new trees.Node(250);
         tree1.root.right.left = new trees.Node(200);
-        tree1.root.right.right = new trees.Node(350);
-        tree1.root.right.right.left = new trees.Node(300);
+        tree1.root.right.right = new trees.Node(300);
+        tree1.root.right.right.left = new trees.Node(350);
         tree1.root.right.right.right = new trees.Node(500);
 
         const tree2 = new trees.BinaryTree();
@@ -59,7 +59,7 @@ describe('test 2', () => {
 
 
         let results = treeIntersection(tree3, tree4);
-        let expected = []
+        let expected = undefined;
 
         expect(expected).toEqual(results);
     })
